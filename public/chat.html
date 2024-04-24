@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Socket.IO chat</title>
+    <title>Chat</title>
     <style>
         body {
             margin: 0;
@@ -78,16 +78,8 @@
   const input = document.getElementById('input');
   const messages = document.getElementById('messages');
   const username = decodeURIComponent(new URLSearchParams(window.location.search).get('username'));
-  
-  document.getElementById('username').value = username;
 
-//   form.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     if (input.value) {
-//       socket.emit('chat message',username+":"+ input.value);
-//       input.value = '';
-//     }
-//   });
+  document.getElementById('username').value = username;
 
   socket.on('chat message', (msg) => {
     input.value = '';
